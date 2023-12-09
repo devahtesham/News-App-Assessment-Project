@@ -1,8 +1,13 @@
 import React from 'react'
+import { SelectBox } from '../MUI'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <>
+    <div className='topic-navigation-switcher flex justify-end'>
+      <SelectBox options={['Topic','apple','meta','netflix','google','twitter','tesla']} />
+    </div>
+    </>
   )
 }
 
