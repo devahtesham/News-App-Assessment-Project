@@ -9,6 +9,7 @@ This is a News Application for assessment project. It uses **https://newsapi.org
 ✅ each article card opens in a new tab as a detail page <br>
 ✅ having dropdown to select language(arabic/english), behalf of the selection data will be displaying <br>
 ✅ handle content for rtl(Right to Left) in a case of Arabic. <br>
+✅ handle image and API failure using sample images and response. <br>
 ✅ having dropdown to select topic(meta/netflix/google/tesla etc), behalf of the selection data will be displaying <br>
 ✅ having toggle to select the theme (dark/light) <br>
 ✅ Loader will be display when any asynchronous task will occur. <br>
