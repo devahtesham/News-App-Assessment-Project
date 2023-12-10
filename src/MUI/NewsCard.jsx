@@ -22,7 +22,7 @@ const NewsCard = (props) => {
             overflow:'hidden',
             height:'100%'
         }} className='' >
-            <CardActionArea>
+            <CardActionArea >
                 
                 <CardMedia
                     component="img"
@@ -31,15 +31,15 @@ const NewsCard = (props) => {
                     alt={title}
                     className='h-[170px] hover:scale-105 duration-300 '
                 />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
+                <CardContent className=''>
+                    <Typography gutterBottom variant="h5" component="div" className='text-rtl'>
                     {transformedTitle}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary" className='py-1'>
+                    <Typography variant="body2" color="text.secondary" className='py-1 text-rtl'>
                         {transformedDesc}
                     </Typography>
                     <Box sx={{textAlign:'end', fontWeight:'700', fontStyle:'italic',marginTop:'8px'}}>
-                        <span>{transformedDate}</span>
+                        <span className='text-rtl'>{transformedDate}</span>
                     </Box>
                 </CardContent>
             </CardActionArea>

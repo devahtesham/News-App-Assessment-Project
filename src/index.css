@@ -63,3 +63,11 @@
     color: #fff;
 }
 
+/* ================================ RTL styling ===================== */
+.rtl .rtl-switch{
+    flex-direction: row-reverse;
+}
+.rtl .text-rtl{
+    text-align: end;
+}
+

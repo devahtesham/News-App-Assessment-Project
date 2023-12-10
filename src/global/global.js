@@ -22,13 +22,19 @@ const getFormattedDate = (unFormattedDate) => {
 const gettingTopicAndLangParams = () => {
     let topic = localStorage.getItem('topic')
     let lang = localStorage.getItem('lang');
-    return{
+    return {
         topic,
         lang
     }
 }
 
+// handling RTL for Arabic
+const handleRtlForArabic = () => {
+    document.querySelector('body').classList.add('rtl')
+}
+
+
 let dummyText = 'Lorem ipsum, dolor sit amet dolore dolor ut, veritatis id repellendus. Quaerat, consequuntur!'
 let dummyTitle = 'You are seeing a Dummy Title due to API null results'
 
-export { BASE_URL, getPrevSevenDaysDate, API_KEY, getFormattedDate, dummyText, dummyTitle,gettingTopicAndLangParams }
+export { BASE_URL, getPrevSevenDaysDate, API_KEY, getFormattedDate, dummyText, dummyTitle, gettingTopicAndLangParams,handleRtlForArabic }

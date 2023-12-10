@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { GettingNewsListing } from '../store/Actions/news'
 import Loader from '../components/UI/Loader'
 import { Link } from 'react-router-dom'
-import { gettingTopicAndLangParams } from '../global/global'
+import { gettingTopicAndLangParams, handleRtlForArabic } from '../global/global'
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -17,7 +17,14 @@ const Home = () => {
     // getting topic and language parameters form LS
 
     let paramsObj = gettingTopicAndLangParams()
+
+    // dispatching an action
     dispatch(GettingNewsListing(paramsObj.topic, paramsObj.lang));
+
+    // check rtl status
+    if (localStorage.getItem('lang') === 'ar') {
+      handleRtlForArabic()
+    }
 
   }, [topic, lang])
 
@@ -29,18 +36,29 @@ const Home = () => {
     localStorage.setItem('topic', e.target.value)
   }
 
+
   // on switching language
   const langChangeHandler = (e) => {
-    setLang(e.target.value)
+    // for adding and removing rtl class for arabic content
+    if (e.target.value === 'ar') {
+      handleRtlForArabic()
+    } else {
+      let bodyClasses = document.querySelector('body').className;
+      if (bodyClasses.includes('rtl')) {
+        document.querySelector('body').classList.remove('rtl')
+      }
+    }
 
+    setLang(e.target.value)
     // setting in local storage for maintaining session
     localStorage.setItem('lang', e.target.value)
+
   }
 
 
   return (
     <SectionWrapper>
-      <div className='topic-navigation-switcher flex justify-between'>
+      <div className='topic-navigation-switcher flex justify-between rtl-switch'>
         <SelectBox options={['Language', 'en', 'ar']}
           onChange={langChangeHandler}
           value={lang}

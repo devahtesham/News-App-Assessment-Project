@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import { GettingNewsListing } from '../store/Actions/news';
 import SectionWrapper from '../components/UI/SectionWrapper';
-import { getFormattedDate, gettingTopicAndLangParams } from '../global/global';
+import { getFormattedDate, gettingTopicAndLangParams, handleRtlForArabic } from '../global/global';
 
 const DetailPage = () => {
   const [newsDetail, setNewsDetail] = useState([])
@@ -13,24 +13,30 @@ const DetailPage = () => {
 
   useEffect(() => {
     let paramsObj = gettingTopicAndLangParams()
-    dispatch(GettingNewsListing(paramsObj.topic,paramsObj.lang))
+    dispatch(GettingNewsListing(paramsObj.topic, paramsObj.lang))
+
   }, [])
 
   useEffect(() => {
     // filtering array
     gettingDetailNewsData(news)
+
+     // check rtl status
+     if (localStorage.getItem('lang') === 'ar') {
+      handleRtlForArabic()
+    }
   }, [news])
 
   const gettingDetailNewsData = (newsArray) => {
-    console.log('news:- ',news);
+    console.log('news:- ', news);
     if (newsArray && newsArray.length > 0) {
-      let filteredNews = newsArray.filter(news => news.Id == id );
+      let filteredNews = newsArray.filter(news => news.Id == id);
 
       // getting formatted Date
       let formattedDate = getFormattedDate(filteredNews[0].publishedAt);
       let transformedObj = {
         ...filteredNews[0],
-        publishedAt:formattedDate
+        publishedAt: formattedDate
       }
       setNewsDetail([transformedObj])
     }
@@ -42,11 +48,11 @@ const DetailPage = () => {
     <SectionWrapper>
       {
         newsDetail.length > 0 && (
-          <div className="detail-page-container flex items-center gap-4 flex-wrap mt-10">
+          <div className="detail-page-container flex items-center gap-4 flex-wrap mt-10 rtl-switch">
             <div className="detail-image basis-[40rem] ">
               <img src={newsDetail[0].urlToImage} alt={newsDetail[0].title} className='w-full rounded-3xl' />
             </div>
-            <div className="detail-desc basis-[50%]">
+            <div className="detail-desc basis-[50%] text-rtl">
               <h1 className='text-3xl font-semibold mb-4'>{newsDetail[0].title}</h1>
               <p className='text-[#00000099] mb-3'>{newsDetail[0].description}</p>
               <div className='flex items-center justify-between italic font-bold mb-3'>
