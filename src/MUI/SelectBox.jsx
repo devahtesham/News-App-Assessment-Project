@@ -13,6 +13,9 @@ const SelectBox = (props) => {
             <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label">{label}</InputLabel>
                 <Select
+                    MenuProps={{
+                        disableScrollLock: true
+                    }}
                     labelId={`demo-simple-select-${label}`}
                     id={`demo-simple-select-${label}`}
                     value={props.value}
