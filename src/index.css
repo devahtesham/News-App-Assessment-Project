@@ -43,7 +43,7 @@
 .dark .news-card{
     border-color: #ff545482;
 }
-.dark header{
+.dark .header{
     background-color: black;
     box-shadow: 0 4px 15px 0 #ff00002e;
 }
