@@ -28,7 +28,7 @@ const DetailPage = () => {
   }, [news])
 
   const gettingDetailNewsData = (newsArray) => {
-    console.log('news:- ', news);
+    // console.log('news:- ', news);
     if (newsArray && newsArray.length > 0) {
       let filteredNews = newsArray.filter(news => news.Id == id);
 

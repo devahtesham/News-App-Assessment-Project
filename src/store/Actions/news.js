@@ -9,7 +9,7 @@ const date = getPrevSevenDaysDate();
 const GettingNewsListing = (topic, lang) => {
     return async (dispatch) => {
         const url = `${BASE_URL}?q=${topic ? topic : 'meta'}&from=${date}&sortBy=publishedAt&language=${lang ? lang : 'en'}&apiKey=${API_KEY}`
-        console.log('url:-' ,url)
+        // console.log('url:-' ,url)
         try {
             // for enabling loader
             dispatch({
