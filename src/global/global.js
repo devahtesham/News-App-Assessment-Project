@@ -2,7 +2,7 @@
 const BASE_URL = 'https://newsapi.org/v2/everything';
 
 // API Key
-const API_KEY = '51a82f00456a407f8521f2977df5fa3d'
+const API_KEY = 'f3d93c993f9c4db087b13b00b085deb4'
 
 // return past 7 days date
 const getPrevSevenDaysDate = () => {
