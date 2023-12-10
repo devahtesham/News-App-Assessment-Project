@@ -2,11 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+    transition-duration: 200ms;
+}
+
 #root{
     display: flex;
     flex-direction: column;
-    min-height: 100vh
+    min-height: 100vh;
 }
 #root main{
     flex: 1;
 }
+.css-1oitmrd-MuiButtonBase-root-MuiCardActionArea-root:hover .MuiCardActionArea-focusHighlight{
+    opacity: 0 !important;
+}
+.css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track{
+    background-color: #ff0000a8 !important;
+}
+.css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked {
+    color: #ff0000 !important;
+}
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
+    padding: 13.5px 14px !important;
+}
+
+/* ============== DARK THEME STYLING ============== */
+.dark{
+    background-color: black;
+    color: white;
+}
+
+.dark p,.dark span{
+    color: #fff;
+}
+.dark .css-firt36-MuiPaper-root-MuiCard-root{
+    background-color: #171717;
+    color: rgb(255 255 255 / 87%);
+}
+.dark .news-card{
+    border-color: #ff545482;
+}
+.dark header{
+    background-color: black;
+    box-shadow: 0 4px 15px 0 #ff00002e;
+}
+.dark span.MuiSwitch-thumb {
+    color: red;
+}
+.dark .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root, .dark .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root{
+    color: #fff;
+}
+.dark .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root{
+    color: #fff;
+}
+.dark fieldset{
+    border-color: #fff;
+}
+.dark span a{
+    color: #fff;
+}
+

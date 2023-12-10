@@ -4,12 +4,9 @@ import { SelectBox, ThemeToggler } from '../../MUI'
 const Header = () => {
   return (
     <>
-      <header className='flex items-center justify-between p-3'>
+      <header className='flex items-center justify-between py-4 px-3 mb-8 sticky top-0 left-0 bg-white z-10 shadow-md'>
         <div className="logo">
-          <h1 className='text-4xl font-extrabold'>NEWS APP</h1>
-        </div>
-        <div className="language-switcher-navigation">
-          <SelectBox options={['Language','English','Arabic']} />
+          <div className='text-4xl font-extrabold text-[#f00]'>NEWS APP</div>
         </div>
         <div className="theme-switcher-navigation">
           <ThemeToggler />

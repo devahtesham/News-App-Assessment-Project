@@ -3,28 +3,43 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { Box, CardActionArea } from '@mui/material';
+import { Box, CardActionArea, duration } from '@mui/material';
+import { dummyText, dummyTitle, getFormattedDate } from '../global/global';
+import PlaceHolderImg from "../assests/placeholder.jpg"
+const NewsCard = (props) => {
+    const {urlToImage, title, description, publishedAt } = props.newsObj;
 
-const NewsCard = (newsObj) => {
+    // transformation
+    const transformedDate = getFormattedDate(publishedAt);
+    const transformedDesc = description ? description.substring(0,150) : dummyText;
+    const transformedTitle = title ? title.substring(0,30): dummyTitle;
+    
     return (
-        <Card className='flex-grow-0 flex-shrink-0 basis-[315px] mb-4 rounded-md' >
+        <Card sx={{
+            borderRadius:'28px',
+            boxShadow:'none',
+            transitionDuration:'500ms',
+            overflow:'hidden',
+            height:'100%'
+        }} className='' >
             <CardActionArea>
+                
                 <CardMedia
                     component="img"
-                    height="140"
-                    image="https://www.euractiv.com/wp-content/uploads/sites/2/2023/12/Tech-Brief-1-800x450.png"
-                    alt="green iguana"
+                    height=""
+                    image={urlToImage ? urlToImage : PlaceHolderImg}
+                    alt={title}
+                    className='h-[170px] hover:scale-105 duration-300 '
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                        News Title
+                    {transformedTitle}
                     </Typography>
                     <Typography variant="body2" color="text.secondary" className='py-1'>
-                        Lizards are a widespread group of squamate reptiles, with over 6,000
-                        species, ranging across all continents except Antarctica
+                        {transformedDesc}
                     </Typography>
                     <Box sx={{textAlign:'end', fontWeight:'700', fontStyle:'italic',marginTop:'8px'}}>
-                        <span>2023-12-08</span>
+                        <span>{transformedDate}</span>
                     </Box>
                 </CardContent>
             </CardActionArea>
