@@ -32,7 +32,9 @@ const NewsCard = (props) => {
                     className='h-[170px] hover:scale-105 duration-300 '
                 />
                 <CardContent className=''>
-                    <Typography gutterBottom variant="h5" component="div" className='text-rtl'>
+                    <Typography gutterBottom variant="h5" component="div" className='text-rtl' sx={{
+                        fontSize:'20px'
+                    }}>
                     {transformedTitle}
                     </Typography>
                     <Typography variant="body2" color="text.secondary" className='py-1 text-rtl'>

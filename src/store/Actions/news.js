@@ -1,4 +1,3 @@
-// https://newsapi.org/v2/everything?q=tesla&from=2023-12-02&sortBy=publishedAt&language=ar&apiKey=eaa29519fb1d40f390402817f72f75ca
 
 import axios from "axios"
 import { API_KEY, BASE_URL, getPrevSevenDaysDate } from "../../global/global"
@@ -37,6 +36,7 @@ const GettingNewsListing = (topic, lang) => {
                 type:ACTION_TYPES.FETCH_NEWS_FAIL
             })
             console.log(error)
+            alert(error.message)
         }
 
     }

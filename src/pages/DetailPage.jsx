@@ -49,13 +49,14 @@ const DetailPage = () => {
       {
         newsDetail.length > 0 && (
           <div className="detail-page-container flex items-center gap-4 flex-wrap mt-10 rtl-switch">
-            <div className="detail-image basis-[40rem] ">
+            <div className="detail-image lg:basis-[40rem] basis-[100%] ">
               <img src={newsDetail[0].urlToImage} alt={newsDetail[0].title} className='w-full rounded-3xl' />
             </div>
-            <div className="detail-desc basis-[50%] text-rtl">
-              <h1 className='text-3xl font-semibold mb-4'>{newsDetail[0].title}</h1>
+
+            <div className="detail-desc xl:basis-[50%] basis-[100%] text-rtl">
+              <h1 className='md:text-3xl text-xl font-semibold mb-4'>{newsDetail[0].title}</h1>
               <p className='text-[#00000099] mb-3'>{newsDetail[0].description}</p>
-              <div className='flex items-center justify-between italic font-bold mb-3'>
+              <div className='flex items-center justify-between italic font-bold mb-3 flex-wrap'>
                 <span>Author:- {newsDetail[0].author}</span>
                 <span>{newsDetail[0].publishedAt}</span>
               </div>

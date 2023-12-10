@@ -68,14 +68,14 @@ const Home = () => {
           value={topic}
         />
       </div>
-      <div className="news-card-listing flex gap-[1.5rem] flex-wrap mt-7 relative">
+      <div className="news-card-listing flex gap-[1.5rem] flex-wrap mt-7 relative justify-center">
         {
           isLoading ? <Loader /> : (
             <>
               {
                 news.length < 1 ? <h1 className='text-center text-3xl font-semibold w-full'>No News Found !</h1> : (
                   news.map((newsObj, id) => (
-                    <Link target='_blank' key={id} to={`/${newsObj.Id}`} className='news-card overflow-hidden border-2 border-[#9e9e9e42] rounded-3xl flex-grow-0 flex-shrink-0 basis-[295px] mb-4 h-[26rem] bg-none hover:shadow-2xl duration-300'>
+                    <Link target='_blank' key={id} to={`/${newsObj.Id}`} className='p-[5px] news-card overflow-hidden border-2 border-[#9e9e9e42] rounded-3xl flex-grow-0 flex-shrink-0 basis-[295px] mb-4 h-[26rem] bg-none hover:shadow-2xl duration-300'>
                       <NewsCard newsObj={newsObj} />
                     </Link>
                   ))
