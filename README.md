@@ -30,5 +30,5 @@ This is a News Application for assessment project. It uses **https://newsapi.org
 4. Now You can test the project as per requirement. For Fresh experience test in an Incognito window. 
 
 #### Note:- 
-I used JavaScript (ES6+) in this project because Currently I am learning TypeScript and was not fully confident to use in this project but i am on it and inshallah it is a matter of 1 to 2 weeks. Furthermore, it was not mentioned in the Job Description as well.
+I used JavaScript (ES6+) in this project because Currently I am learning TypeScript and was not fully confident to use in this project but i am on it and i hope it is a matter of 1 to 2 weeks. Furthermore, it was not mentioned in the Job Description as well.
  
